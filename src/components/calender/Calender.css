@@ -1,0 +1,43 @@
+.Calender {
+  padding: 1rem;
+  border-bottom: 1px solid #ebebeb;
+}
+.Calender .header {
+  display: flex;
+  align-items: center;
+}
+.Calender .header .title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.Calender .header .title {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.Calender .header .btns span {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Calender .header .btns span:hover {
+  background-color: #ebebeb;
+  transition: all 300ms ease-in-out;
+}
+.Calender .items {
+  padding: 0.5rem;
+}
+.Calender .items .item {
+  padding: 0.25rem;
+  margin: 5px;
+  font: size 1rem;
+  cursor: pointer;
+}
+.Calender .header .title p {
+  margin-left: 5px;
+}
