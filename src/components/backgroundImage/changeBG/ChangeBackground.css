@@ -1,0 +1,22 @@
+.ChangeBackground {
+  background-color: white;
+  width: 300px;
+  height: 300px;
+}
+.change_bg_btn {
+  font-size: 1rem;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.change_bg_btn button {
+  background-color: #0080ff;
+  width: 100%;
+  height: 40px;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
