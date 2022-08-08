@@ -1,0 +1,21 @@
+._logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+    background-color: #28003a;
+  }
+  
+  ._logo .info p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  ._logo .info a {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+  }
+  

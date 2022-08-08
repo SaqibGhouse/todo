@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import SideBar from "./components/sideBar/SideBar";
+import Navbar from "./components/navbar/Navbar";
 import Main from "./components/main/Main";
 import User from "./components/user/User";
 import AddNewTodo from "./components/addNewTodo/AddNewTodo";
@@ -9,17 +9,19 @@ import Projects from "./components/projects/Projects";
 import Todos from "./components/todos/Todos";
 import EditTodo from "./components/editTodo/EditTodo";
 import ChangeBackground from "./components/backgroundImage/changeBG/ChangeBackground";
+import Logo from "./components/logo/Logo";
 
 function App() {
   return (
     <div className="App">
-      <SideBar>
-        <User />
+      <Navbar>
+        <Logo />
         <AddNewTodo />
-        <Calender />
-        <Projects />
+        {/* <Calender /> */}
+        {/* <Projects /> */}
         <ChangeBackground />
-      </SideBar>
+        <User />
+      </Navbar>
       <Main>
         <Todos />
         <EditTodo />

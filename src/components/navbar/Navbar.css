@@ -1,0 +1,9 @@
+/* Sidebar */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #28003A;
+  flex-wrap: wrap;
+  width: 100%;
+  position: fixed;
+}

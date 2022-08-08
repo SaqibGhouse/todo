@@ -1,7 +1,4 @@
 /* AddNewTodo */
-.AddNewTodo {
-  border-bottom: 1px solid #ebebeb;
-}
 .AddNewTodo .btn {
   padding: 1rem;
   width: 100%;
@@ -17,6 +14,7 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  padding: 0px 10px 0px 10px;
 }
 .AddNewTodo .btn button:hover {
   filter: brightness(1.1);

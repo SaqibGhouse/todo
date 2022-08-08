@@ -1,24 +1,21 @@
 .User {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.5rem;
-    background-color: #28003A;
-  }
-  
-  .User .logo img {
-    width: 83px;
-  }
-  
-  .User .info p {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .User .info a {
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+  background-color: #28003a;
+  margin-right: 7px;
+}
+
+.User .info p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.User .info a {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
