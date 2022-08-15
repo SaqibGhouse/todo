@@ -4,10 +4,10 @@ import "./Main.css";
 
 const Main = ({ children }) => {
   return (
-    <div className="">
-      <BackgroundImage show={true} />
+    <>
+      {/* <BackgroundImage show={true} /> */}
       <div className="Main">{children}</div>;
-    </div>
+    </>
   );
 };
 
