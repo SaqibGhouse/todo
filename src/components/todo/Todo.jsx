@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { CheckCircleFill, Circle, Trash } from "react-bootstrap-icons";
 import "./Todo.css";
 
-function Todo({ todo }) {
+function Todo(props) {
+  const { todo, deleteTodo } = props;
   const [hover, setHover] = useState(false);
 
   return (
@@ -13,27 +14,26 @@ function Todo({ todo }) {
         onMouseLeave={() => setHover(false)}
       >
         <div className="check-todo">
-          {todo.checked ? (
+          {todo.data.checked ? (
             <span className="checked">
               <CheckCircleFill color="#bebebe" />
             </span>
           ) : (
             <span className="unchecked">
-              <Circle color={todo.color} />
+              <Circle color={todo.data.color} />
             </span>
           )}
         </div>
         <div className="text">
-          <p style={{ color: todo.checked ? "#bebebe" : "#000000" }}>
-            {todo.text}
+          <p style={{ color: todo.data.checked ? "#bebebe" : "#000000" }}>
+            {todo.data.text}
           </p>
-          <span>
-            {todo.time} - {todo.project}
-          </span>
-          <div className={`line ${todo.checked ? "line-through" : ""}`}></div>
+          <div
+            className={`line ${todo.data.checked ? "line-through" : ""}`}
+          ></div>
         </div>
-        <div className="delete-todo">
-          {(hover || todo.checked) && (
+        <div className="delete-todo" onClick={() => deleteTodo(todo.id)}>
+          {(hover || todo.data.checked) && (
             <span>
               <Trash />
             </span>

@@ -2,14 +2,11 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../modal/Modal";
 import "./AddnewTodo.css";
-import { Bell, CalendarDay, Clock, Palette, X } from "react-bootstrap-icons";
-import {
-  MuiPickersUtilsProvider,
-  DatePicker,
-  TimePicker,
-} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
 import TodoForm from "../todoForm/TodoForm";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase/index";
+import randomColor from "randomcolor";
+import { todosCollectionRef } from "../../firebase/firestore.collection";
 
 const AddNewTodo = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +14,26 @@ const AddNewTodo = () => {
   const [day, setDay] = useState(new Date());
   const [time, setTime] = useState(new Date());
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      return;
+    }
+    // const todosCollRef = collection(db, "todos");
+    addDoc(todosCollectionRef, {
+      text: text,
+      checked: false,
+      color: randomColor(),
+    })
+      .then((response) => {
+        console.log(response.id);
+      })
+      .catch((error) => {
+        console.log(error.messgae);
+      });
+    setShowModal(false);
+    setText("");
+  };
 
   return (
     <div className="AddNewTodo">

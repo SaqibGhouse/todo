@@ -5,34 +5,33 @@ import { TodoContext } from "../../context";
 import Next7Days from "../next7Days/Next7Days";
 import Todo from "../todo/Todo";
 import "./Todos.css";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/index";
+import { doc, onSnapshot,deleteDoc } from "firebase/firestore";
 import { useState } from "react";
-
+import { todosCollectionRef } from "../../firebase/firestore.collection";
+import { db } from "../../firebase";
 const Todos = () => {
-  // const { todos } = useContext(TodoContext);
   const [todos, setTodos] = useState([]);
   useEffect(() => {
-    getTodos();
+    const unsubscribe = onSnapshot(todosCollectionRef, (snapshot) => {
+      setTodos(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })));
+    });
+    return () => {
+      unsubscribe();
+    };
   }, []);
-  const getTodos = () => {
-    const todosCollectionref = collection(db, "todos");
-    getDocs(todosCollectionref)
-      .then((response) => {
-        console.log(response.docs);
-        const todos = response.docs.map((doc) => ({
-          data: doc.data(),
-          id: doc.id,
-        }));
-        setTodos(todos);
-      })
-      .catch((error) => console.log(error));
+  const deleteTodo = (id) => {
+    const docDelRef = doc(db, "todos", id);
+    deleteDoc(docDelRef)
+      .then(() => console.log("document deleted"))
+      .catch((err) => console.log(err));
   };
+
+  
   return (
     <div className="Todos">
       <div className="todos">
         {todos.map((todo) => (
-          <Todo todo={todo.data} key={todo.id} />
+          <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} />
         ))}
       </div>
       <Next7Days />
