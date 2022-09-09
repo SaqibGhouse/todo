@@ -6,7 +6,6 @@ import User from "./components/user/User";
 import AddNewTodo from "./components/addNewTodo/AddNewTodo";
 import Todos from "./components/todos/Todos";
 import EditTodo from "./components/editTodo/EditTodo";
-import ChangeBackground from "./components/backgroundImage/changeBG/ChangeBackground";
 import Logo from "./components/logo/Logo";
 
 function App() {
@@ -15,14 +14,11 @@ function App() {
       <Navbar>
         <Logo />
         <AddNewTodo />
-        {/* <Calender /> */}
-        {/* <Projects /> */}
-        {/* <ChangeBackground /> */}
         <User />
       </Navbar>
       <Main>
         <Todos />
-        <EditTodo />
+        {/* <EditTodo /> */}
       </Main>
     </div>
   );

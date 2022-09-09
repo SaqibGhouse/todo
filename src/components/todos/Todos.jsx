@@ -1,8 +1,5 @@
 import React from "react";
 import { useEffect } from "react";
-import { useContext } from "react";
-import { TodoContext } from "../../context";
-import Next7Days from "../next7Days/Next7Days";
 import Todo from "../todo/Todo";
 import "./Todos.css";
 import { doc, onSnapshot,deleteDoc } from "firebase/firestore";
@@ -34,7 +31,6 @@ const Todos = () => {
           <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} />
         ))}
       </div>
-      <Next7Days />
     </div>
   );
 };

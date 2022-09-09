@@ -33,7 +33,7 @@ const TodoForm = ({
             autoFocus
           />
         </div>
-        <div className="remind">
+        {/* <div className="remind">
           <Bell />
           <p>Remind Me</p>
         </div>
@@ -54,7 +54,7 @@ const TodoForm = ({
         <div className="pick-project">
           <Palette />
           <p>Choose a project</p>
-        </div>
+        </div> */}
         {showButton && (
           <>
             <div className="cancel" onClick={() => setShowModal(false)}>
